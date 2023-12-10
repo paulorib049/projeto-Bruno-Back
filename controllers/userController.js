@@ -37,7 +37,7 @@ module.exports= {
     },
     //Criar um usuarios
     createUser: async (req, res) => {
-        const {cpf, name, email, password, confirmpassword, type} = req.body
+        const {cpf, name, email, password, confirmpassword} = req.body
     
         //validações
         if(!cpf){
@@ -55,9 +55,7 @@ module.exports= {
         if(password != confirmpassword){
             return res.status(422).json({msg:'as senhas não conferem!'})
         }
-        if(!type){
-            return res.status(422).json({msg:'o tipo é obrigatório!'})
-        }
+
     
         //validando usuario
         const userExists = await User.findOne({email:email})
@@ -76,7 +74,7 @@ module.exports= {
             name,
             email,
             password: passwordHash,
-            type
+    
         })
     
         try{

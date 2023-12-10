@@ -5,8 +5,8 @@ const Product = mongoose.model('Product', {
     valor: Number,
     tipo: String,
     id: Number,
-    validade: Number,
-    precoPromo: Number
+    precoPromo: Number,
+    image: String
 })
 
 module.exports = Product
