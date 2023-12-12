@@ -15,8 +15,8 @@ productRouter.route('/api/product/:id')
 productRouter.route('/api/products/:id')
 .delete((req, res) => productController.deleteProduct(req, res))
 
-productRouter.route('/api/product/:id')
-.get((req, res) => productController.getProduct(req, res))
+productRouter.route('/api/product')
+.get((req, res) => productController.getProducts(req, res))
 
 
 

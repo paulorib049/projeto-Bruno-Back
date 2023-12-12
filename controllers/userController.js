@@ -80,10 +80,14 @@ module.exports= {
         try{
             await user.save()
     
-            res.status(201).json({msg: 'usuário criado com sucesso!'})
+            // No trecho onde você envia a resposta de sucesso (usuário criado com sucesso)
+res.status(201).json({ message: 'Usuário criado com sucesso!', data: user });
+
+
+
         }catch(error){
             console.log(error)
-            res.status(500).json({msg: 'aconteceu um erro no servidor, tente novamente mais tarde'})
+            res.status(500).json({ message: 'Aconteceu um erro no servidor, tente novamente mais tarde' });
         }
     },
     loginUser: async(req, res) => {
